@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Usuario</title>
+
+    <link rel="stylesheet" href="style3.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index3.html">Inicio</a></li>
+        <li><a href="form-usuario.html" class="active">Gestión Usuarios</a></li>
+        <li><a href="form-post.html">Gestión Publicaciones</a></li>
+      </ul>
+    </nav>
+
+    <main class="contenedor">
+      <h1 class="titulo-principal">Formulario de Registro de Usuario</h1>
+
+      <form id="formUsuario" novalidate>
+        <label for="nombre">Nombre *</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <span class="error-message" id="error-nombre"></span>
+
+        <label for="usuario">Usuario *</label>
+        <input type="text" id="usuario" name="usuario" required />
+        <span class="error-message" id="error-usuario"></span>
+
+        <label for="fechaIngreso">Fecha de Ingreso *</label>
+        <input
+          type="text"
+          id="fechaIngreso"
+          name="fechaIngreso"
+          placeholder="dd/MM/yyyy"
+          required
+        />
+        <span class="error-message" id="error-fechaIngreso"></span>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+        <span class="error-message" id="error-email"></span>
+
+        <div class="form-buttons">
+          <button type="button" id="btnCancelar">Cancelar</button>
+          <button type="submit" id="btnGuardar">Guardar</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="form-usuario.js"></script>
+  </body>
+</html>

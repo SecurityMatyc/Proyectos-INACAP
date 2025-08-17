@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Gestión de Usuarios</title>
+
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/v/dt/dt-2.3.2/datatables.min.css"
+    />
+
+    <link rel="stylesheet" href="style3.css" />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/v/dt/dt-2.3.2/datatables.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index3.html" class="active">Inicio</a></li>
+          <li><a href="form-usuario.html">Gestión Usuarios</a></li>
+          <li><a href="form-post.html">Publicaciones</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <h1 class="titulo-principal">Sistema de Gestión de Usuarios</h1>
+
+      <section class="filtros">
+        <label for="tipoDatos">Seleccionar tipo:</label>
+        <select id="tipoDatos">
+          <option value="users">Usuarios</option>
+          <option value="posts">Publicaciones</option>
+          <option value="comments">Comentarios</option>
+        </select>
+        <button id="btnCargar">Cargar Datos</button>
+      </section>
+
+      <section class="tabla-container">
+        <table id="tablaDatos" class="display" style="width: 100%">
+          <thead>
+            <tr id="encabezadoTabla"></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="script3.js"></script>
+  </body>
+</html>

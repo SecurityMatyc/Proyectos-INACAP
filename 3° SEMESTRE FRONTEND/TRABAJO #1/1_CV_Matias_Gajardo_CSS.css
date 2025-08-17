@@ -1,0 +1,51 @@
+/* Estilo para la top bar */
+.topbar {
+    background-color: #343a40;
+    color: white;
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(61, 255, 7, 0.1);
+}
+/* Contenedor principal con sidebar y contenido */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+/* Estilo para la sidebar */
+.sidebar {
+    background-color: #f8f9fa;
+    width: 350px !important; /* Ancho aumentado */
+    padding: 25px;
+    border-right: 3px solid #dee2e6;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+.sidebar img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+.sidebar a {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+.sidebar a:hover {
+    text-decoration: underline;
+}
+/* Estilo para el contenido principal */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+/* Estilo para las secciones del CV */
+.section {
+    margin-bottom: 30px;
+}
+.section h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}

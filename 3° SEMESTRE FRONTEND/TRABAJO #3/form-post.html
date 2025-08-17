@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Publicación</title>
+    <link rel="stylesheet" href="style3.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index3.html">Inicio</a></li>
+        <li><a href="form-usuario.html">Gestión Usuarios</a></li>
+        <li>
+          <a href="form-post.html" class="active">Gestión Publicaciones</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="contenedor">
+      <h1 class="titulo-principal">Formulario de Registro de Publicación</h1>
+      <form id="formPost" novalidate>
+        <label for="userId">ID Usuario *</label>
+        <input type="number" id="userId" name="userId" min="1" required />
+        <span class="error-message" id="error-userId"></span>
+
+        <label for="title">Título *</label>
+        <input type="text" id="title" name="title" required />
+        <span class="error-message" id="error-title"></span>
+
+        <label for="body">Contenido *</label>
+        <textarea id="body" name="body" rows="5" required></textarea>
+        <span class="error-message" id="error-body"></span>
+
+        <div class="form-buttons">
+          <button type="button" id="btnCancelarPost">Cancelar</button>
+          <button type="submit" id="btnGuardarPost">Guardar</button>
+        </div>
+      </form>
+    </main>
+    <script src="form-post.js"></script>
+  </body>
+</html>
