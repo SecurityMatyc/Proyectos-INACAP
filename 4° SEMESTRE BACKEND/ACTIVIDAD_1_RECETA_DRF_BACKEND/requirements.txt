@@ -1,0 +1,8 @@
+pip freeze > requirements.txt
+# Este comando guarda las dependencias actuales del entorno virtual en un archivo requirements.txt
+# para que puedan ser instaladas fácilmente en otro entorno.
+# Asegúrate de ejecutar este comando dentro del entorno virtual donde tienes instaladas las dependencias.
+# Asegúrate de que el entorno virtual esté activado antes de ejecutar este comando.
+
+#pip install -r requirements.txt
+# Este comando instala todas las dependencias listadas en el archivo requirements.txt

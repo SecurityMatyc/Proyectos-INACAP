@@ -1,0 +1,24 @@
+# Entornos virtuales
+env/
+venv/
+# Archivos de configuración de entornos virtuales
+
+# Cache de Python
+__pycache__/
+*.pyc
+# Archivos compilados de Python
+
+# Base de datos local
+db.sqlite3
+# Archivo de base de datos SQLite local
+
+# Cosas del sistema/editor
+.DS_Store
+.vscode/
+# Archivos de configuración de macOS y Visual Studio Code
+
+
+
+
+
+
