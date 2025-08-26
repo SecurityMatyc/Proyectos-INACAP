@@ -16,11 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.urls import path
 from api import views  # 👈 importa tu vista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # aquí irán las rutas de la API (si las usas)
-    path('api/', include('api.urls')),
     path('', views.home, name='home'),  # 👈 ruta raíz
 ]
