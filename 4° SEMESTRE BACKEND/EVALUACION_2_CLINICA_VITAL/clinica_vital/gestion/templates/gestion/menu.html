@@ -1,0 +1,16 @@
+{% extends 'gestion/base.html' %}
+{% block title %}Menú principal{% endblock %}
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="mb-4">Menú Principal - Clínica Vital</h2>
+        <div class="list-group">
+            <a href="{% url 'especialidad_list' %}" class="list-group-item list-group-item-action">Especialidades</a>
+            <a href="{% url 'medico_list' %}" class="list-group-item list-group-item-action">Médicos</a>
+            <a href="{% url 'paciente_list' %}" class="list-group-item list-group-item-action">Pacientes</a>
+            <a href="{% url 'consulta_medica_list' %}" class="list-group-item list-group-item-action">Consultas Médicas</a>
+            <a href="{% url 'tratamiento_list' %}" class="list-group-item list-group-item-action">Tratamientos</a>
+            <a href="{% url 'medicamento_list' %}" class="list-group-item list-group-item-action">Medicamentos</a>
+            <a href="{% url 'receta_medica_list' %}" class="list-group-item list-group-item-action">Recetas Médicas</a>
+        </div>
+    </div>
+{% endblock %}

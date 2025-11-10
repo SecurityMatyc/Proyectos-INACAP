@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Entornos virtuales
+.env
+.venv/
+env/
+venv/
+eva2/
+ENV/
+*.env
+
+# Django
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+media/
+static/
+local_settings.py
+
+# Migraciones (opcional, generalmente se incluyen)
+# */migrations/*
+# !*/migrations/__init__.py
+
+# Dependencias
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.project
+.pydevproject
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing y coverage
+.coverage
+.tox/
+.pytest_cache/
+htmlcov/
+coverage.xml
+*.cover
+
+# Carpetas de node (si usas frontend)
+node_modules/

@@ -1,0 +1,26 @@
+{% extends 'gestion/base.html' %}
+{% block title %}{% if form.instance.pk %}Editar Receta{% else %}Nueva Receta{% endif %}{% endblock %}
+{% block content %}
+    <h2>{% if form.instance.pk %}Editar{% else %}Nueva{% endif %} Receta Médica</h2>
+    {% if form.errors %}
+  <div class="alert alert-danger">
+    {{ form.non_field_errors }}
+    {% for field in form %}
+      {% for error in field.errors %}
+        <p>{{ field.label }}: {{ error }}</p>
+      {% endfor %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+    <form method="post" class="mb-4">
+        {% csrf_token %}
+        <div class="mb-3">{{ form.tratamiento_id.label_tag }} {{ form.tratamiento }}</div>
+        <div class="mb-3">{{ form.medicamento_id.label_tag }} {{ form.medicamento }}</div>
+        <div class="mb-3">{{ form.dosis.label_tag }} {{ form.dosis }}</div>
+        <div class="mb-3">{{ form.frecuencia.label_tag }} {{ form.frecuencia }}</div>
+        <div class="mb-3">{{ form.duracion.label_tag }} {{ form.duracion }}</div>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'receta_medica_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

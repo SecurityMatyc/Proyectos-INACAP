@@ -1,0 +1,51 @@
+{% extends 'gestion/base.html' %}
+{% block title %}Consultas Médicas{% endblock %}
+{% block content %}
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Consultas Médicas</h2>
+        <form method="get" class="mb-3">
+    <label for="medico">Filtrar por médico:</label>
+    <select name="medico" id="medico" onchange="this.form.submit()" class="form-select d-inline w-auto ms-2">
+        <option value="">Todos</option>
+        {% for med in medicos %}
+            <option value="{{ med.id }}" {% if med.id|stringformat:"s" == medico_id %}selected{% endif %}>{{ med.nombre }} {{ med.apellido }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+        <a href="{% url 'consulta_medica_create' %}" class="btn btn-success">Agregar Consulta</a>
+    </div>
+    <table class="table table-hover">
+        <thead class="table-primary">
+            <tr>
+                <th>Paciente</th>
+                <th>Médico</th>
+                <th>Fecha Consulta</th>
+                <th>Motivo</th>
+                <th>Diagnóstico</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for consulta in consultas %}
+            <tr>
+                <td>{{ consulta.paciente_id }}</td>
+                <td>{{ consulta.medico_id }}</td>
+                <td>{{ consulta.fecha_consulta }}</td>
+                <td>{{ consulta.motivo }}</td>
+                <td>{{ consulta.diagnostico }}</td>
+                <td>{{ consulta.estado }}</td>
+                <td>
+                    <a href="{% url 'consulta_medica_update' consulta.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'consulta_medica_delete' consulta.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">No hay consultas registradas.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

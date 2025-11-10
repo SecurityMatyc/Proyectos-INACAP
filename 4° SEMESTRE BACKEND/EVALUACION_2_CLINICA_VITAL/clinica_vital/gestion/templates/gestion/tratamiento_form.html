@@ -1,0 +1,25 @@
+{% extends 'gestion/base.html' %}
+{% block title %}{% if form.instance.pk %}Editar Tratamiento{% else %}Nuevo Tratamiento{% endif %}{% endblock %}
+{% block content %}
+    <h2>{% if form.instance.pk %}Editar{% else %}Nuevo{% endif %} Tratamiento</h2>
+    {% if form.errors %}
+  <div class="alert alert-danger">
+    {{ form.non_field_errors }}
+    {% for field in form %}
+      {% for error in field.errors %}
+        <p>{{ field.label }}: {{ error }}</p>
+      {% endfor %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+    <form method="post" class="mb-4">
+        {% csrf_token %}
+        <div class="mb-3">{{ form.consulta_id.label_tag }} {{ form.consulta }}</div>
+        <div class="mb-3">{{ form.descripcion.label_tag }} {{ form.descripcion }}</div>
+        <div class="mb-3">{{ form.duracion_dias.label_tag }} {{ form.duracion_dias }}</div>
+        <div class="mb-3">{{ form.observaciones.label_tag }} {{ form.observaciones }}</div>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'tratamiento_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'gestion/base.html' %}
+{% block title %}Eliminar Médico{% endblock %}
+{% block content %}
+    <h2>Confirmar Eliminación</h2>
+    <p>¿Desea eliminar al médico <strong>{{ medico.nombre }} {{ medico.apellido }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{% url 'medico_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

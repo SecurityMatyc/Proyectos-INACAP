@@ -1,0 +1,27 @@
+{% extends 'gestion/base.html' %}
+{% block title %}{% if form.instance.pk %}Editar Consulta{% else %}Nueva Consulta{% endif %}{% endblock %}
+{% block content %}
+    <h2>{% if form.instance.pk %}Editar{% else %}Nueva{% endif %} Consulta Médica</h2>
+    {% if form.errors %}
+  <div class="alert alert-danger">
+    {{ form.non_field_errors }}
+    {% for field in form %}
+      {% for error in field.errors %}
+        <p>{{ field.label }}: {{ error }}</p>
+      {% endfor %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+    <form method="post" class="mb-4">
+        {% csrf_token %}
+        <div class="mb-3">{{ form.paciente_id.label_tag }} {{ form.paciente }}</div>
+        <div class="mb-3">{{ form.medico_id.label_tag }} {{ form.medico }}</div>
+        <div class="mb-3">{{ form.fecha_consulta.label_tag }} {{ form.fecha_consulta }}</div>
+        <div class="mb-3">{{ form.motivo.label_tag }} {{ form.motivo }}</div>
+        <div class="mb-3">{{ form.diagnostico.label_tag }} {{ form.diagnostico }}</div>
+        <div class="mb-3">{{ form.estado.label_tag }} {{ form.estado }}</div>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'consulta_medica_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

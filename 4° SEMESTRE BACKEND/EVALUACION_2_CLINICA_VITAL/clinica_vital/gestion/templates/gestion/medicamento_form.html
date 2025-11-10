@@ -1,0 +1,25 @@
+{% extends 'gestion/base.html' %}
+{% block title %}{% if form.instance.pk %}Editar Medicamento{% else %}Nuevo Medicamento{% endif %}{% endblock %}
+{% block content %}
+    <h2>{% if form.instance.pk %}Editar{% else %}Nuevo{% endif %} Medicamento</h2>
+    {% if form.errors %}
+  <div class="alert alert-danger">
+    {{ form.non_field_errors }}
+    {% for field in form %}
+      {% for error in field.errors %}
+        <p>{{ field.label }}: {{ error }}</p>
+      {% endfor %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+    <form method="post" class="mb-4">
+        {% csrf_token %}
+        <div class="mb-3">{{ form.nombre.label_tag }} {{ form.nombre }}</div>
+        <div class="mb-3">{{ form.laboratorio.label_tag }} {{ form.laboratorio }}</div>
+        <div class="mb-3">{{ form.stock.label_tag }} {{ form.stock }}</div>
+        <div class="mb-3">{{ form.precio_unitario.label_tag }} {{ form.precio_unitario }}</div>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'medicamento_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

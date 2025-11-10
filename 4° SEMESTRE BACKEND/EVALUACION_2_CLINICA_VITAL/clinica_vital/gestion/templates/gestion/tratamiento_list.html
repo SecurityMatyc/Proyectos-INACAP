@@ -1,0 +1,37 @@
+{% extends 'gestion/base.html' %}
+{% block title %}Tratamientos{% endblock %}
+{% block content %}
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Tratamientos</h2>
+        <a href="{% url 'tratamiento_create' %}" class="btn btn-success">Agregar Tratamiento</a>
+    </div>
+    <table class="table table-hover">
+        <thead class="table-primary">
+            <tr>
+                <th>Consulta</th>
+                <th>Descripción</th>
+                <th>Duración (días)</th>
+                <th>Observaciones</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tratamiento in tratamientos %}
+            <tr>
+                <td>{{ tratamiento.consulta_id }}</td>
+                <td>{{ tratamiento.descripcion }}</td>
+                <td>{{ tratamiento.duracion_dias }}</td>
+                <td>{{ tratamiento.observaciones }}</td>
+                <td>
+                    <a href="{% url 'tratamiento_update' tratamiento.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'tratamiento_delete' tratamiento.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No hay tratamientos registrados.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
